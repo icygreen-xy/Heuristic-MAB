@@ -24,12 +24,7 @@ class BANDIT():
         self.Max_iter = Max_iter
         self.recent = []
 
-        
-        if not isinstance(self.lb, list):
-            self.lb = [self.lb for _ in range(dim)]
-            self.ub = [self.ub for _ in range(dim)]
-        self.lb = np.asarray(self.lb)
-        self.ub = np.asarray(self.ub)
+       
 
         # Initialize the locations of Harris' hawks
         self.Positions = np.asarray(
