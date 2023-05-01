@@ -1,2 +1,2 @@
-# Algorithm-Selection-Research-Project
-Algorithm Selection Research Project
+# Heuristic MAB
+Heuristic MAB
