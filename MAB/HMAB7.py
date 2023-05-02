@@ -17,6 +17,9 @@ class BANDIT():
         self.s.R_list = []
         self.best_pos = np.zeros(dim)
         self.best_sol = float("inf")  # change this to -inf for maximization problems
+        self.worst_pos = np.zeros(dim)
+        self.worst_score = float("inf")     
+        
         self.dim = dim
         self.lb= lb
         self.ub= ub
@@ -65,9 +68,14 @@ class BANDIT():
                 # fitness of locations
                 self.fitness[i] = self.objf(self.Positions[i, :])
                 # Update the location of Rabbit
-                if self.fitness[i] < self.best_sol:  # Change this to > for maximization problem
+                if self.fitness[i] > self.best_sol:  # Change this to > for maximization problem
                     self.best_sol = self.fitness[i].copy()
                     self.best_pos = self.Positions[i, :].copy()
+                if self.fitness[i] > self.worst_score:
+                    self.worst_score = self.fitness[i].copy()  # Update Worst_Score
+                    self.worst_pos = self.Positions[i,:].copy()
+                
+                
             self.convergence_curve[self.t] = self.best_sol
             self.t = self.t + 1
         
