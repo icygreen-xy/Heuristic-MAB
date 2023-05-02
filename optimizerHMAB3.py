@@ -1,7 +1,7 @@
 import MAB.HMAB3 as bandit
 
 
-# import RANDOM_BANDIT as random_bandit  
+
 import numpy as np 
 import time
 
