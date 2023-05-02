@@ -17,24 +17,21 @@ def MBArun(objf, lb, ub, dim, NumOfRuns, popSize,Iter):
 
     Parameters
     ----------
-    optimizer : list
-        The list of optimizers names
-    objectivefunc : list
-        The list of benchmark functions
+    objectivefunc : function
+        problem - benchmark functions
+    lb   : list
+    different dimensions from [-5,5]^n, n belongs to {2,3,4,5,10,20,40}
+    
+    ub   : list 
+    different dimensions from [-5,5]^n, n belongs to {2,3,4,5,10,20,40}
+    
     NumOfRuns : int
         The number of independent runs
-    params  : set
-        The set of parameters which are:
-        1. Size of population (PopulationSize)
-        2. The number of iterations (Iterations)
-    export_flags : set
-        The set of Boolean flags which are:
-        1. Export (Exporting the results in a file)
-        2. Export_details (Exporting the detailed results in files)
-        3. Export_convergence (Exporting the covergence plots)
-        4. Export_boxplot (Exporting the box plots)
+    popSize  : int
+        Size of population
+    Iter     : int
+        The number of iterations
 
-    Returns
     -----------
     N/A
     """
